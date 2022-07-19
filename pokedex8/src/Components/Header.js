@@ -1,7 +1,9 @@
 import React from "react";
-import { DivHeader } from './style'
+import { DivHeader, ButtonPokedex, DivHome, DivPokedex, DivText } from './style'
 import { useNavigate } from 'react-router-dom'
 import { goToPokedex, goToHome } from "../Router/Cordinator";
+import Logo from '../assets/images/logo.png'
+import Arrow from '../assets/images/ArrowBack.png'
 
 export default function Header() {
     const navigate = useNavigate()
@@ -9,22 +11,27 @@ export default function Header() {
     return (
         <div>
             {window.location.pathname === '/' ?
-                <DivHeader>
-                    <h3>Olá, sou o Header</h3>
-                    <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
-                </DivHeader> : ''}
+                <DivHome>
+                    <div></div>
+                    <img src={Logo} />
+                    <ButtonPokedex onClick={() => goToPokedex(navigate)}>Pokedex</ButtonPokedex>
+                </DivHome> : ''}
 
             {window.location.pathname === '/pokedex' ?
-                <DivHeader>
-                    <button onClick={() => goToHome(navigate)}>Todos Pokémons</button>
-                    <h3>Olá, sou o Header</h3>
-                </DivHeader> : ''}
+                <DivPokedex>
+                    <DivText>
+                    <img src={Arrow} />
+                    <p onClick={() => goToHome(navigate)}>Todos Pokémons</p>
+                    </DivText>
+                    <img src={Logo} />
+                    <div></div>
+                </DivPokedex> : ''}
 
 
             {window.location.pathname === '/details' ?
                 <DivHeader>
-                    <button onClick={() => goToHome(navigate)}>Todos Pokémons</button>
-                    <h3>Olá, sou o Header</h3>
+                    <p onClick={() => goToHome(navigate)}>Todos Pokémons</p>
+                    <img src={Logo} />
                     <button>Excluir</button>
                 </DivHeader> : ''}
         </div>
