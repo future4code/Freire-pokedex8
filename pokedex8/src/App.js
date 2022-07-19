@@ -1,5 +1,4 @@
-import './App.css';
-import Header from './Components/Header';
+import './App.css'
 import Router from './Router/Router';
 
 function App() {
