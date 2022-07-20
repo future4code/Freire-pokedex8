@@ -1,13 +1,13 @@
 
-import React, { useEffect, useState } from "react";
-import React, { useContext } from "react";
-import Header from "../../Components/Header";
+import React, { useEffect, useState, useContext } from "react";
 import { PokemonContext } from "../../Context/PokemonContext";
 
 export default function Home() {
-    const {pokedex, setPokedex} = useContext(PokemonContext)
-    console.log(pokedex)
+    const {states, setters, request} = useContext(PokemonContext)
 
+    useEffect(() => {
+        request.getPokemons()
+    })
     return (
         <div>
             <h2>HOME</h2>
