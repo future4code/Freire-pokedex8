@@ -34,8 +34,8 @@ function DetailsPokemon() {
                 </MovesContainer>
             </DetailsModal>
 
-            <button className={`${pokemon.taken ? "disabled" : ""}`} onClick={() => this.handleDetailsPokemon()} disabled={pokemon.taken}>Pegar Pokemon</button>
-            <button type='' onClick={voltarTodosPokemons}>Todos Pokemons</button>
+            {/* <button className={`${pokemon.taken ? "disabled" : ""}`} onClick={() => this.handleDetailsPokemon()} disabled={pokemon.taken}>Pegar Pokemon</button>
+            <button type='' onClick={voltarTodosPokemons}>Todos Pokemons</button> */}
 
         </DetailsContainer>
 
