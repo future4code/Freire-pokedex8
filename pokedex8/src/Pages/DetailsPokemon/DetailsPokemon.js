@@ -4,17 +4,17 @@ import { DetailsContainer, DetailsModal, ImagesContainer, MovesContainer, StatsC
 // import PokeBallImage from '../../assets/images/pokeball-imag
 
 function DetailsPokemon() {
-    handleEscolherPokemon = async () => {
-        const { escolherPokemon, pokemon } = this.props
+    // handleEscolherPokemon = async () => {
+    //     const { escolherPokemon, pokemon } = this.props
 
-        const confirmation = window.confirm("Já tem pokemon?");
+    //     const confirmation = window.confirm("Já tem pokemon?");
 
-        if (!confirmation) return;
+    //     if (!confirmation) return;
 
-        await this.handleTrocarStatus(pokemon.id, false)
+    //     await this.handleTrocarStatus(pokemon.id, false)
 
-        escolherPokemon()
-    }
+    //     escolherPokemon()
+    // }
 
     return (
         <DetailsContainer>
