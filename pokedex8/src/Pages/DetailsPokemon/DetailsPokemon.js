@@ -1,8 +1,18 @@
 import React from "react";
 import { DetailsContainer, DetailsModal, ImagesContainer, MovesContainer, StatsContainer } from "./styles";
-// import PokeBallImage from '../../assets/images/pokeball-image.png'
 
-export default function DetailsPokemon() {
+// import PokeBallImage from '../../assets/images/pokeball-imag
+
+handleEscolherPokemon = async () => {
+    const { escolherPokemon, pokemon } = this.props
+
+    const confirmation = window.confirm("Já tem pokemon?");
+
+    if (!confirmation) return;
+
+    await this.handleTrocarStatus(pokemon.id, false)
+
+    escolherPokemon()
 
     return (
         <DetailsContainer>
@@ -18,9 +28,16 @@ export default function DetailsPokemon() {
                 </StatsContainer>
 
                 <MovesContainer>
-                    
+
                 </MovesContainer>
             </DetailsModal>
+
+            <button className={`${pokemon.taken ? "disabled" : ""}`} onClick={() => this.handleDetailsPokemon()} disabled={pokemon.taken}>Pegar Pokemon</button>
+            <button type='' onClick={voltarTodosPokemons}>Todos Pokemons</button>
+
         </DetailsContainer>
+
+
     )
 }
+
