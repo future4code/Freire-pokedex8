@@ -1,1 +1,2 @@
-export const URL_BASE = 'https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20'
+export const URL_BASE = 'https://pokeapi.co/api/v2/pokemon'
+export const URL_IMG = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'

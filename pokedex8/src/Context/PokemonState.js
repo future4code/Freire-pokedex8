@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { URL_BASE } from '../Constants/url';
 import { PokemonContext } from './PokemonContext';
 import axios from 'axios'
+import { useParams } from 'react-router-dom';
 
 
 export const PokemonState = (props) => {
@@ -15,7 +16,6 @@ export const PokemonState = (props) => {
             .get(URL_BASE)
             .then((response) => {
                 setPokemonList(response.data.results)
-                console.log(response)
             })
             .catch((error) => {
                 console.log(error.response.data.message)
