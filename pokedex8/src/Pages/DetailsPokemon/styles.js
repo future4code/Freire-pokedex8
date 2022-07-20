@@ -70,6 +70,10 @@ export const StatsContainer = styled.section `
     height: 25%;
     background-color: #cccccc;
 
+    h1 {
+        color: #000000;
+    }
+
     @media (min-width: 1024px){
         width: 25%;
         height: 100%;
@@ -81,6 +85,10 @@ export const MovesContainer = styled.section `
     height: 50%;
     background-color: #eeeeee;
     border-radius: 0 0 3rem 3rem;
+
+    h1 {
+        color: #000000;         
+    }
     
     @media (min-width: 1024px){
         width: 50%;

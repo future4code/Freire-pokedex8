@@ -1,20 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { DetailsContainer, DetailsModal, ImagesContainer, MovesContainer, StatsContainer } from "./styles";
+import axios from 'axios';
 
 // import PokeBallImage from '../../assets/images/pokeball-imag
-
 function DetailsPokemon() {
-    // handleEscolherPokemon = async () => {
-    //     const { escolherPokemon, pokemon } = this.props
 
-    //     const confirmation = window.confirm("Já tem pokemon?");
+    const [details, setDetails] = useState()
+    const [types, setTypes] = useState()
+    const [moves, setMoves] = useState()
+    const [stats, setStats] = useState()
 
-    //     if (!confirmation) return;
+    const GetInfo = () => {
+        axios
+            .get(`https://pokeapi.co/api/v2/pokemon/9`)
 
-    //     await this.handleTrocarStatus(pokemon.id, false)
+            .then((res) => {
+                console.log(res.data)
+                setDetails(res.data)
+                setTypes(res.data.types)
+                setMoves(res.data.moves.slice(0, 5))
+                setStats(res.data.stats)
+            })
 
-    //     escolherPokemon()
-    // }
+            .catch((err) => {
+                console.log(err.response.data);
+            });
+    }
+
+    useEffect(() => {
+        GetInfo();
+    }, []);
+
+
+    const listaTypes = (types && types.map(({type}) => {
+        return <li key={type.name} > {type.name}</li>
+    }))
+
+    const listaMoves = (moves && moves.map(({move}) => {
+        return <li key={move.name}>{move.name}</li>
+    }))
 
     return (
         <DetailsContainer>
@@ -26,11 +50,14 @@ function DetailsPokemon() {
                 </ImagesContainer>
 
                 <StatsContainer>
-
+                        <h1>Base stats</h1>
+                        {listaTypes}
+                        
                 </StatsContainer>
 
                 <MovesContainer>
-
+                        <h1>Moves</h1>
+                        {listaMoves}
                 </MovesContainer>
             </DetailsModal>
 
