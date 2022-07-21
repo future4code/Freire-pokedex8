@@ -1,39 +1,14 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { URL_BASE } from '../Constants/url';
+import {useState} from 'react';
 import { PokemonContext } from './PokemonContext';
-import axios from 'axios'
 
 
 export const PokemonState = (props) => {
-    const [pokedex, setPokedex] = useState([])
+    const [pokedex, setPokedex] = useState (['teste'])
     const [detailsPokemon, setDetailsPokemon] = useState([])
-    const [pokemonList, setPokemonList] = useState([])
 
-    const getPokemons = () => {
-        axios
-            .get(URL_BASE)
-            .then((response) => {
-                setPokemonList(response.data.results)
-                console.log(response)
-            })
-            .catch((error) => {
-                console.log(error.response.data.message)
-            })
-    }
-
-    useEffect(() => {
-        requests.getPokemons();
-    }, []);
-
-    const states = { pokemonList, pokedex, detailsPokemon }
-    const setters = { setPokemonList, setPokedex, setDetailsPokemon }
-    const requests = { getPokemons }
-
-    const data = { states, setters, requests }
-
-    return (
-        <PokemonContext.Provider value={data}>
+    return(
+        <PokemonContext.Provider value = {{pokedex, setPokedex, detailsPokemon, setDetailsPokemon}}>
             {props.children}
         </PokemonContext.Provider>
     )
