@@ -1,7 +1,7 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
+- Pessoa 1 Marcia de Paula Mello
 - Pessoa 2
 - Pessoa 3
 
