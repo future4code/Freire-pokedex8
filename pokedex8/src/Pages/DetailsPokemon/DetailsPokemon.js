@@ -14,7 +14,7 @@ function DetailsPokemon() {
 
     const handleGetPokemon = async () => {
         try {
-            const response = await axios.get("https://pokeapi.co/api/v2/pokemon/1");
+            const response = await axios.get("https://pokeapi.co/api/v2/pokemon/94");
             
             setPokemon(response.data);
         } catch (error) {

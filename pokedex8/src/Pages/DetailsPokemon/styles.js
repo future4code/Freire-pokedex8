@@ -173,7 +173,7 @@ export const MovesContainer = styled.section`
         max-width: 350px;
         position: absolute;
         right: 0rem;
-        top: -11rem;
+        top: -7rem;
     }
 
     > section {
