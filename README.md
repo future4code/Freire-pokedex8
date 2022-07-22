@@ -1,16 +1,20 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1 Marcia de Paula Mello
-- Pessoa 2
-- Pessoa 3
+- Marcia de Paula Mello
+- Camila Pinheiro
+- Guilherme Beutler
 
-Link do Surge: www.link.com.br
+Link do Surge: https://superficial-sun.surge.sh
 
 O que funciona:
-- Item 1
-- Item 2
+- Header com navegação entre as páginas
+- Pagina Home e botão para renderizar mais pokemons
 
 O que não funciona: 
-- Item 3
-- Item 4
+- Envio da home para pokedex
+- Envio da home/pokedex para detalhes
+
+# Prints:
+
+![image](https://user-images.githubusercontent.com/101596777/180524871-5bdba678-3246-4852-8314-1fb2c3cb10ff.png)
