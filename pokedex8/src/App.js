@@ -1,12 +1,12 @@
 import './App.css'
 import Router from './Router/Router';
-import { PokemonState } from './Context/PokemonState';
+import  GlobalState  from './Context/GlobalState';
 
 function App() {
   return (
-    <PokemonState>
+    <GlobalState>
       <Router />
-    </PokemonState>
+    </GlobalState>
 
   );
 }
